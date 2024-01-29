@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <div class="con"></div>
+    <script>
+        fetch("https://fakestoreapi.com/products").then((res)=> res.json()).then((data)=>{
+            let str="<table><tr><th>id</th><th>title</th><th>price</th></tr>"
+                for(let i=0;i<data.length;i++){
+                    str=str+`<tr><td>${data[i].id}</td><td>${data[i].title}</td><td>${data[i].price}</td></tr>`
+                }
+                str=str+'</table>'
+                document.getElementsByClassName("con")[0].innerHTML=str
+        })
+    </script>
+    
+</body>
+</html>
